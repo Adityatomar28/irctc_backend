@@ -1,4 +1,5 @@
 // middlewares/error.middleware.js
+//It will work like a try catch
 const { AppError } = require('../utils/error');
 const {config} = require('../config');
 const logger = require('../config/logger');

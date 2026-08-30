@@ -10,3 +10,5 @@ const config = {
 }
 
 module.exports = { config };
+
+//with the help of this instead of wrting process.env. this we will write config.port 
