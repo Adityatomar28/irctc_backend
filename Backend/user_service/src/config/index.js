@@ -7,6 +7,8 @@ const config = {
     KAFKA_BROKER: process.env.KAFKA_BROKER,
     KAFKA_CLIENT_ID: process.env.KAFKA_CLIENT_ID,
     ALLOWED_ORIGINS: process.env.ALLOWED_ORIGINS,
+    OTP_TTL: config.OTP_TTL || 300,
+
 }
 
 module.exports = { config };
