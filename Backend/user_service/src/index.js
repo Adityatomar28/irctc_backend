@@ -5,6 +5,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const { config } = require("dotenv");
 const logger = require("./config/logger");
+const authRoutes = require("./routes/auth.route");
 
 const { corsMiddleware } = require("./middleware/cors.middleware");
 const errorHandler = require('./middlewares/error.middleware');
@@ -18,6 +19,8 @@ app.use(corsMiddleware());
 app.use(cookieParser());
 app.use(reqLogger);
 app.use(express.json());
+app.use("/api/v1/auth", authRoutes)
+
 
 app.get("/", (req, res) => {
     res.send("Hello  from index.js of user-service")
