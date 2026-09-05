@@ -1,15 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { sendOTP } = require('../services/auth.service');
+const { sendOTP, verifyOTP, login, rotateRefreshToken, verifyGoogleIdToken } = require('../controllers/auth.controller');
 
-router.post('/send-otp', async (req, res, next) => {
-    try {
-        const { firstName, lastName, email, password } = req.body;
-        const { otpSessionId } = await sendOTP(firstName, lastName, email, password);
-        res.json({ otpSessionId });
-    } catch (error) {
-        next(error);
-    }
-});
+router.post("/send-otp", sendOTP);
+router.post("/verify-otp", verifyOTP);
+router.post("/login", login);
 
 module.exports = router;
