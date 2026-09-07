@@ -82,6 +82,7 @@ exports.rotateRefreshToken = asyncHandler(async (req, res) => {
 
 exports.verifyGoogleIdToken = asyncHandler(async (req, res) => {
     const { idToken } = req.body;
+    // which is in jwt
     if (!idToken) {
         throw new BadRequestError("Invalid Google ID Token", "INVALID TOKEN")
     }
